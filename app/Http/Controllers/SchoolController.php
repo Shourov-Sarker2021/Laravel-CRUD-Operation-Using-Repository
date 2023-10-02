@@ -61,8 +61,8 @@ class SchoolController extends Controller
      * @param  \App\Models\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function show(School $school)
-    {
+    public function show($id)
+    {   $school=$this->test->get($id);
         return view('school.show',compact('school'));
     }
 

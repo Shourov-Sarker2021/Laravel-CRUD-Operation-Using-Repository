@@ -25,6 +25,11 @@ class TestRepository implements TestInterface
         return School::find($id)->update($data);
     }
 
+    public function details($id, array $data)
+    {
+        return School::find($id)->show($data);
+    }
+
     public function delete($id)
     {
         return School::destroy($id);

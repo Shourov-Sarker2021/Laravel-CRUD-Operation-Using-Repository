@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container">
-        <h2>This is Create Page</h2>
+        <h2>This is Repository Create Page</h2>
     </div>
         @if($errors->any())
             <div class="alert alert-danger">

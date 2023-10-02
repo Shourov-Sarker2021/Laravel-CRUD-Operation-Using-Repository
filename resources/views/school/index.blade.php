@@ -1,7 +1,7 @@
 @extends('school.layout')
 @section('content')
     <div class="container">
-        <h2>This is Index Page</h2>
+        <h2>This is Repository CRUD Index Page</h2>
     </div>
     <a class="btn btn-primary" href="{{route('schools.create')}}">Add New School</a>
      
