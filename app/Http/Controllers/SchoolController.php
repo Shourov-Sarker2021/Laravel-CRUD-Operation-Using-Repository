@@ -19,7 +19,7 @@ class SchoolController extends Controller
      */
     public function index()
     {
-        $schools= $this->test->all(); //->paginate(10)
+        $schools= $this->test->all();  
         return view('school.index', compact('schools'))->with('i',(request('page',1)-1)*5);
     }
 
@@ -72,7 +72,7 @@ class SchoolController extends Controller
      * @param  \App\Models\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) //$id from repository  //edit(School $school) privious.
+    public function edit($id) 
     {
         $school=$this->test->get($id); //repository.
         return view('school.edit',compact('school'));
@@ -85,7 +85,7 @@ class SchoolController extends Controller
      * @param  \App\Models\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request)   //(Request $request, School $school)
+    public function update($id, Request $request)    
     {
         $request->validate([
             'name'=>'required',
@@ -94,8 +94,7 @@ class SchoolController extends Controller
             'result'=>'required',
         ]);
 
-        $input=$request->all();
-        //$school->update($input);
+        $input=$request->all(); 
         $this->test->update($id,$input);
         return redirect()->route('schools.index')->with('success',"School Update Successfully");
     }
@@ -106,9 +105,9 @@ class SchoolController extends Controller
      * @param  \App\Models\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) //(School $school)
+    public function destroy($id)  
     {
-        //$school->delete();
+        
         //return "Delete successfully";
         $this->test->delete($id);
         return redirect()->route('schools.index')->with('success',"School Delete Successfully");
