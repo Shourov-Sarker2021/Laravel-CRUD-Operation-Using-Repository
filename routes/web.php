@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
- 
 use App\Http\Controllers\SchoolController;
- 
 use App\Models\School;
+use App\Http\Controllers\CityController;
+use App\Models\City;
+use App\Http\Controllers\StoreController;
+use App\Models\Store; 
  
  
 
@@ -25,6 +27,8 @@ Route::get('/', function () {
 
  
 Route::resource('schools', SchoolController::class);
+Route::resource('city', CityController::class);
+Route::resource('products', StoreController::class);
  
  
 
